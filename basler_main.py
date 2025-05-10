@@ -38,7 +38,7 @@ class PylonImageCapture:
 def main():
     rtde_r = rtde_receive.RTDEReceiveInterface("172.28.60.10")
     image_capture = PylonImageCapture()
-    data_collector = data_acquisition.DataAcquisition(image_capture.capture_image, rtde_r)
+    data_collector = data_acquisition.DataAcquisition(image_capture.capture_image, rtde_r, "basler_data/")
     data_collector.perform_data_acquisition()
 
 
