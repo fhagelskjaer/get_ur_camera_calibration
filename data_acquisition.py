@@ -6,10 +6,6 @@ import numpy as np
 import cv2
 import rtde_receive
 
-
-
-rtde_r = rtde_receive.RTDEReceiveInterface("192.168.1.251")
-
 class DataAcquisition:
     def __init__(self, image_capture, rtde_r, counter=0):
         self.counter = counter
