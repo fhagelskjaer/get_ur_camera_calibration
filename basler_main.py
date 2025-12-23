@@ -7,17 +7,13 @@ class PylonImageCapture:
     def __init__(self):
         self.pylon_camera = pylon.InstantCamera(pylon.TlFactory.GetInstance().CreateFirstDevice())
         self.pylon_camera.Open()
-        # self.camera.UserSetSelector = self.camera.UserSetDefault.Value
-        # self.camera.UserSetLoad.Execute() 
 
-        # self.pylon_camera.StartGrabbingMax(1)
         self.pylon_camera.StartGrabbing(pylon.GrabStrategy_LatestImageOnly)
         grab_result = self.pylon_camera.RetrieveResult(200, pylon.TimeoutHandling_ThrowException)
         grab_result.Release()
         self.pylon_camera.StopGrabbing()
 
     def capture_image(self):
-        # self.pylon_camera.StartGrabbingMax(1)
         self.pylon_camera.StartGrabbing(pylon.GrabStrategy_LatestImageOnly)
 
         grab_result = self.pylon_camera.RetrieveResult(200, pylon.TimeoutHandling_ThrowException)
